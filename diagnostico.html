@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnóstico - TecnoAyuda</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">🛠️ Tecno<span>Ayuda</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          ☰
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tutoriales.html">Tutoriales</a></li>
+          <li><a href="diagnostico.html" class="active">Diagnóstico</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 40vh; padding-top: 7rem">
+      <div class="container">
+        <h1>🔧 <span>Diagnóstico</span></h1>
+        <p>
+          Identifica el problema de tu computadora y recibe recomendaciones para
+          solucionarlo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Diagnóstico -->
+    <section class="section">
+      <div class="container diagnostic-section">
+        <h2 class="section-title">¿Qué problema tiene tu computadora?</h2>
+        <p class="section-subtitle">
+          Selecciona el problema que más se parece a lo que estás
+          experimentando.
+        </p>
+
+        <div class="diagnostic-problems">
+          <button class="problem-btn" data-problem="lenta">
+            <span class="problem-icon">🐌</span>
+            Está lenta
+          </button>
+          <button class="problem-btn" data-problem="internet">
+            <span class="problem-icon">🌐</span>
+            No tengo Internet
+          </button>
+          <button class="problem-btn" data-problem="espacio">
+            <span class="problem-icon">💾</span>
+            Tengo poco espacio
+          </button>
+          <button class="problem-btn" data-problem="sonido">
+            <span class="problem-icon">🔊</span>
+            No tengo sonido
+          </button>
+          <button class="problem-btn" data-problem="imagen">
+            <span class="problem-icon">🖥️</span>
+            No muestra imagen
+          </button>
+        </div>
+
+        <!-- Resultado -->
+        <div class="diagnostic-result" id="diagnosticResult">
+          <h3 id="resultTitle"></h3>
+          <p id="resultDescription"></p>
+          <ul id="resultSteps"></ul>
+          <a href="tutoriales.html" class="btn btn-primary" id="resultLink"
+            >Ver tutorial recomendado</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="diagnosticModalOverlay" aria-hidden="true">
+      <div
+        class="modal diagnostic-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="diagnosticModalTitle"
+      >
+        <div class="modal-header">
+          <div>
+            <h2 id="diagnosticModalTitle">Diagnóstico</h2>
+            <span class="modal-category" id="diagnosticModalCategory"
+              >Recomendación</span
+            >
+          </div>
+          <button
+            class="modal-close"
+            id="diagnosticModalClose"
+            aria-label="Cerrar"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" id="diagnosticModalBody"></div>
+      </div>
+    </div>
+
+  <!-- Footer (reutilizable via JavaScript) -->
+  <div id="footer-placeholder"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
